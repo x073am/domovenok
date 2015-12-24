@@ -1,0 +1,17 @@
+<?php
+  include("connect.php"); 
+  mysql_query("SET CHARACTER SET utf8 ");
+  if($_GET['own'] and $_GET['idg'])
+    {  
+	    $ida = $_GET['ida'];
+      $idg = $_GET['idg'];
+      $name = $_GET['nameb'];
+	    $dpu = $_GET['dpu'];
+      $dre = $_GET['dre'];
+      $inf = $_GET['inf'];
+      
+if(mysql_query("Insert into Book (id_Author,id_genre,nameb,publicationDate,receiptDate,info) Values('$ida','$idg','$name','$dpu','$dre','$inf')"))
+      echo succces;
+    }
+?>
+

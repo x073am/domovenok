@@ -1,0 +1,12 @@
+<?php
+  include("connect.php"); 
+  mysql_query("SET CHARACTER SET utf8 ");
+  if($_GET['name'])
+    {  
+	    $name = $_GET['name'];
+	    
+      if(mysql_query("Insert into genre (namea) Values('$name')"))
+      echo succces;
+    }
+?>
+

@@ -1,0 +1,12 @@
+<?php
+  include("connect.php"); 
+  mysql_query("SET CHARACTER SET utf8 ");
+  if($_GET['idp'])
+    {  
+	    $idp = $_GET['idp'];
+      $vi = $_GET['views'];
+      $vi += 1;
+	    if(mysql_query("update gall set views='$vi' where idp='$idp'"))
+      echo succces;
+    }
+?>

@@ -1,0 +1,10 @@
+<?php
+  include("connect.php"); 
+  mysql_query("SET CHARACTER SET utf8 ");
+  if($_GET['idb'])
+    {  
+	    $id = $_GET['idb'];
+      if(mysql_query("delete from Book where idb=$id"))
+      echo succces;
+    }
+?>

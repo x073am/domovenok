@@ -1,0 +1,13 @@
+<?php
+  include("connect.php"); 
+  mysql_query("SET CHARACTER SET utf8 ");
+  if($_GET['ida'] and $_GET['namea'])
+    {  
+	    $id = $_GET['ida'];
+	    $name = $_GET['namea'];
+      $dbirth = $_GET['dbirth'];
+      $ddead = $_GET['ddead'];
+      if(mysql_query("update Author set namea='$name',birthDate = '$dbirth', deathDate = '$ddead' where ida='$id'"))
+      echo succces;
+    }
+?>

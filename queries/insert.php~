@@ -1,0 +1,12 @@
+<?php
+  include("connect.php"); 
+  mysql_query("SET CHARACTER SET utf8 ");
+  if($_GET['name'] and $_GET['pw'])
+    {  
+	    $name = $_GET['name'];
+	    $pw = $_GET['pw'];
+      if(mysql_query("Insert into users (name,password) Values('$name','$pw')"))
+      echo succces;
+    }
+?>
+

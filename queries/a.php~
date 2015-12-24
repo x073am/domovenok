@@ -1,0 +1,40 @@
+<?php
+include("/queries/connect.php");
+include('header.html');
+?>
+<div class="row">
+  <table class= "table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th colspan="1" rowspan="1" style="width: 180px;" tabindex="0">Автор</th>
+        <th colspan="1" rowspan="1" style="width: 220px;" tabindex="0">Книга</th>
+        <th colspan="1" rowspan="1" style="width: 288px;" tabindex="0">Жанр</th>
+        <th colspan="1" rowspan="1" style="width: 288px;" tabindex="0">Аннотация</th>
+      </tr>
+    </thead>
+
+<?php
+	mysql_query("SET CHARACTER SET utf8 ");
+	$query = mysql_query("select * from AllIn where ida = 4 order by publicationDate desc");
+	$i=0;
+	while($fetch = mysql_fetch_array($query))
+		{
+			if($i%2==0) $class = 'even'; else $class = 'odd';
+				$res .= '<tr class="'.$class.'">         
+               <td ><span class = "xedit">'.$fetch['namea'].'</span> 
+                  <span style = "font-size:9pt" class = "xedit">('.$fetch['birthDate'].','.$fetch['deathDate'].')</span>
+               </td>
+               <td>'.$fetch['nameb'].'</span> 
+                  <span style = "font-size:9pt" class = "xedit">('.$fetch['publicationDate'].','.$fetch['receiptDate'].')</span>
+               </td>
+               <td>'.$fetch['nameg'].'</td>
+               <td><span class = "inf">'.$fetch['info'].'</span></td>
+              </tr>';							
+		}
+echo $res;
+?>
+ </table>
+</div>
+<?php
+  include("footer.html");
+?>

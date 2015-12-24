@@ -1,0 +1,13 @@
+<?php
+  include("connect.php"); 
+  mysql_query("SET CHARACTER SET utf8 ");
+  if($_GET['path'])
+    {  
+	    $name = $_GET['path'];
+	    
+
+      if(mysql_query("Insert into gall (path,views) Values('$name','0')"))
+      echo succces;
+    }
+?>
+

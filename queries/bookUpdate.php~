@@ -1,0 +1,14 @@
+<?php
+  include("connect.php"); 
+  mysql_query("SET CHARACTER SET utf8 ");
+  if($_GET['idb'] and $_GET['nameb'])
+    {  
+	    $id = $_GET['idb'];
+	    $name = $_GET['nameb'];
+      $dbirth = $_GET['publicationDate'];
+      $ddead = $_GET['recieptDate'];
+      $inf = $_GET['info'];
+      if(mysql_query("update Book set nameb='$name',publicationDate = '$dbirth', recieptDate = '$ddead',info = '$inf' where idb='$id'"))
+      echo succces;
+    }
+?>
